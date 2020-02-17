@@ -13,10 +13,16 @@ while day > 7 or day < 1:
     day = int(input('what is the day? 1= monday 7=sunday'))
 while time < 7 or time > 24:
     time = int(input('what is the arrival time'))
-while True:
-    if hourstay + time < 24 and hourstay <= maxstay[day-1]:
-        break
-    hourstay = int(input('how long are you intending to stay?'))
+if time >15:
+    while True:
+        if hourstay + time < 24:
+            break
+        hourstay = int(input('how long are you intending to stay?'))
+else:
+    while True:
+        if hourstay + time < 24 and hourstay <= maxstay[day-1]:
+            break
+        hourstay = int(input('how long are you intending to stay?'))
 if time<15:
     price = hourstay*multipliers[day-1]
 else:
