@@ -8,7 +8,10 @@ maxstay = [2,2,2,2,2,4,8]
 def modcheck(freqcheck):
     if 11-((int(freqcheck[0])*5+int(freqcheck[1])*4+int(freqcheck[2])*3+int(freqcheck[3])*2)%11) == int(freqcheck[4]):
         check = 'y'
-    return check
+        return check
+    else:
+        check='n'
+        return check
 while day > 7 or day < 1:
     day = int(input('what is the day? 1= monday 7=sunday'))
 while time < 7 or time > 24:
