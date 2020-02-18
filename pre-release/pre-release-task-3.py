@@ -26,11 +26,13 @@ else:
         if hourstay + time < 24 and hourstay <= maxstay[day-1]:
             break
         hourstay = int(input('how long are you intending to stay?'))
-if time+hourstay<15:
+if time+hourstay==16:
+    price= hourstay*multipliers[day-1]
+if time+hourstay<=15:
     price = hourstay*multipliers[day-1]
-elif time+hourstay>15:
+elif time+hourstay>16:
     price = 2+((time+hourstay-17))*multipliers[day-1]
-    if price == 2:
+    if price <= 2:
         price = 2+((time+hourstay-16))*multipliers[day-1]
 elif time>15:
     price = 2
