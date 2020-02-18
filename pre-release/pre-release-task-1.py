@@ -29,7 +29,7 @@ else:
 if time<15:
     price = hourstay*multipliers[day-1]
 else:
-    price = hourstay*2
+    price =2
 freq = input('Do you have a frequent parking number?')
 if freq in ['Yes','y','yes','Y']:
     freqcheck = input('Please input your frequent parking number.')
