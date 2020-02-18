@@ -20,7 +20,7 @@ if time >15:
     while True:
         if hourstay + time < 24:
             break
-        hourstay = int(input('how long are you intending to stay?'))
+        hourstay = int(input('how long are you intending to stay?(max until midnight)'))
 else:
     while True:
         if hourstay + time < 24 and hourstay <= maxstay[day-1]:
