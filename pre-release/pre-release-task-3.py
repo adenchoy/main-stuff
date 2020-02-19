@@ -42,10 +42,10 @@ if freq in ['Yes','y','yes','Y']:
 if check == 'y':
     if time<=15:
         price = price*0.9
-        print(price)
+        print('Your price is:',price,'elephants')
     else:
         price = price*0.5
-        print(price)
+        print('Your price is:',price,'elephants')
 else:
-    print(price)
+    print('Your price is:',price,'elephants')
     
