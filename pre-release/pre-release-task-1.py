@@ -26,10 +26,12 @@ else:
         if hourstay + time < 24 and hourstay <= maxstay[day-1]:
             break
         hourstay = int(input('how long are you intending to stay?'))
-if time<15:
+if time+hourstay<15:
+    price = hourstay*multipliers[day-1]
+if time+hourstay>15:
     price = hourstay*multipliers[day-1]
 else:
-    price =2
+    price= 26
 freq = input('Do you have a frequent parking number?')
 if freq in ['Yes','y','yes','Y']:
     freqcheck = input('Please input your frequent parking number.')
@@ -37,9 +39,9 @@ if freq in ['Yes','y','yes','Y']:
 if check == 'y':
     if time<=15:
         price = price*0.9
-        print(price)
+        print('Your price is:',price,'elephants')
     else:
         price = price*0.5
         print(price)
 else:
-    print(price)
+    print('Your price is:',price,'elephants')
