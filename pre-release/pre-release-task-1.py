@@ -18,20 +18,18 @@ while time < 7 or time > 24:
     time = int(input('what is the arrival time'))
 if time >15:
     while True:
-        if hourstay + time < 24:
+        if hourstay + time <= 24:
             break
         hourstay = int(input('how long are you intending to stay?(max until midnight)'))
 else:
     while True:
-        if hourstay + time < 24 and hourstay <= maxstay[day-1]:
+        if hourstay + time <= 24 and hourstay <= maxstay[day-1]:
             break
         hourstay = int(input('how long are you intending to stay?'))
-if time+hourstay<15:
+if time<15:
     price = hourstay*multipliers[day-1]
-if time+hourstay>15:
-    price = hourstay*multipliers[day-1]
-else:
-    price= 26
+elif time>15:
+    price= 2
 freq = input('Do you have a frequent parking number?')
 if freq in ['Yes','y','yes','Y']:
     freqcheck = input('Please input your frequent parking number.')
