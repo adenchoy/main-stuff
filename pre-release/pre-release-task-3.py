@@ -5,6 +5,7 @@ price = 0
 check = ()
 multipliers = [10,10,10,10,10,3,2]
 maxstay = [2,2,2,2,2,4,8]
+add=0
 def modcheck(freqcheck):
     if 11-((int(freqcheck[0])*5+int(freqcheck[1])*4+int(freqcheck[2])*3+int(freqcheck[3])*2)%11) == int(freqcheck[4]):
         check = 'y'
@@ -26,16 +27,14 @@ else:
         if hourstay + time < 24 and hourstay <= maxstay[day-1]:
             break
         hourstay = int(input('how long are you intending to stay?'))
-if time+hourstay==16:
-    price= hourstay*multipliers[day-1]
-if time+hourstay<=15:
+if time + hourstay>15:
+    while add+time<=15 and add<hourstay:
+        add+=1
+    price=2+(add*multipliers[day-1])
+if time+hourstay<15:
     price = hourstay*multipliers[day-1]
-elif time+hourstay>16:
-    price = 2+((time+hourstay-17))*multipliers[day-1]
-    if price <= 2:
-        price = 2+((time+hourstay-16))*multipliers[day-1]
 elif time>15:
-    price = 2
+    price =2
 freq = input('Do you have a frequent parking number?')
 if freq in ['Yes','y','yes','Y']:
     freqcheck = input('Please input your frequent parking number.')

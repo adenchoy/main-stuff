@@ -3,5 +3,7 @@ class Employee():
         self.fname = fname
         self.lname = lname
         self.pay = pay
+
 emp1 = Employee('Aden','Choy',30000)
 print(emp1.lname)
+print(emp1.pay)
