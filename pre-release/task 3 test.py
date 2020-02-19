@@ -8,3 +8,4 @@ print(2+add*2)
 time=15
 hourstay=8
 add=0
+
