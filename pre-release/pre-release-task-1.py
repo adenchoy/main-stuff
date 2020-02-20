@@ -39,7 +39,7 @@ if freq.upper()==('Y'):
                 break
             else:
                 price = price*0.5
-                print(price)
+                print(f'Your price is: {price}RM')
                 break
         else:
             if input('Number invalid, discount not applied.\nWould you like to retry? Y/N').upper == 'Y':
