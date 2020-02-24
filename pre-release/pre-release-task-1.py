@@ -18,12 +18,12 @@ if time >15:
     while True:
         if hourstay + time <= 24:
             break
-        hourstay = int(input('how long are you intending to stay?(max until midnight)\nHow long in hours?: '))
+        hourstay = int(input('how long are you intending to stay?(max until midnight)\n(hours): '))
 else:
     while True:
         if hourstay + time <= 24 and hourstay <= maxstay[day-1]:
             break
-        hourstay = int(input('how long are you intending to stay?\nHow long in hours?: '))
+        hourstay = int(input('how long are you intending to stay?\n(hours): '))
 if time<=15:
     price = hourstay*multipliers[day-1]
 elif time>15:
