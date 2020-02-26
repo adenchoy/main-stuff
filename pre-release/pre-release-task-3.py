@@ -13,10 +13,18 @@ def modcheck(freqcheck):
     else:
         check='n'
         return check
-while day > 7 or day < 1:
-    day = int(input('what is the day? 1= monday 7=sunday'))
-while time < 7 or time > 24:
+while True:
+    day = int(input('what is the day? 1 = monday 7 = sunday'))
+    if day <= 7 and day >= 1:
+        break
+    else:
+        print('error')
+while True:
     time = int(input('what is the arrival time'))
+    if time > 7 and time <=24:
+        break
+    else:
+        print('error')
 if time >15:
     while True:
         if hourstay + time <= 24:
@@ -48,4 +56,3 @@ if check == 'y':
         print(f'Your price is: {price}RM')
 else:
     print(f'Your price is: {price}RM')
-    
