@@ -42,9 +42,12 @@ if freq.upper()==('Y'):
                 print(f'Your price is: {price}RM')
                 break
         else:
-            if input('Number invalid, discount not applied.\nWould you like to retry? Y/N').upper == 'Y':
+            test = str(input('Number invalid, discount not applied.\nWould you like to retry? Y/N'))
+            if test.upper() == 'Y':
+                freqcheck = input('please reinput freq parking number')
                 continue
             else:
+                print(f'Your price is: {round(price,2)}RM')
                 break
 
 if freq.upper()==('N'):
