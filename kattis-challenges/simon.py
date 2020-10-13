@@ -1,7 +1,8 @@
 n=int(input())
 for i in range(n):
     test = input()
-    if test[0:10] == "simon says":
+    simon = test[0:10]
+    if simon.lower() == "simon says":
         print(test[11::])
     else:
         print(' ')
