@@ -14,7 +14,7 @@ with open("mam.txt",'r') as mam:
 print(totalmam)
 if totalmam > totalrud:
     with open('mam.txt','a') as mam:
-        mam.write(f'{totalmam}')
+        mam.write(f'\n{totalmam}')
 else:
     with open('if.txt','a') as rud:
         rud.write(f'\n{totalrud}')
