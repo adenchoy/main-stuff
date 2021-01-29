@@ -1,0 +1,2 @@
+What is a stack? : B
+What is a queue? : C

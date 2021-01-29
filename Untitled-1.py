@@ -1,17 +1,25 @@
 
-import datetime
-def sort(nlist):
-    done = False
-    while not done:
-        done = True
-        for i in range(len(nlist)-1):
-            if nlist[i] > nlist[i+1]:
-                done = False
-                nlist[i]=nlist[i+1]
-#            print(nlist) #Fun to see how much print statements slow it down
-    return nlist
-
-start_time = datetime.datetime.now()
-nlist = sort([4,1,7,3,9,4,2,6,7])
-print(datetime.datetime.now()-start_time)
-print(nlist)
+count = 1
+counter = 0
+for x in range(int(input())):
+    a = [int(d) for d in input().split()]
+    if a[2] == 1:
+        print("YES")
+    elif a[0]%2 != 0 and a[1]%2 !=0:
+        print("NO") 
+    else:
+        n = int()
+        while True:
+            if a[0]%2 == 0:
+                a[0]/= 2
+                count+=1
+            elif a[1]%2 == 0:
+                a[1]/= 2
+                count +=1
+            if count >= a[2]-1:
+                print("YES")
+                break
+            elif counter > a[2]:
+                print("NO")
+                break
+            counter+=1
