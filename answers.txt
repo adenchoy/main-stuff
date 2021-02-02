@@ -1,0 +1,8 @@
+An ordered collection of data that uses the first in last out methodology
+An ordered collection of data that uses the first in first out methodology
+Random stuff
+e
+e
+stuff 
+stuff 2
+example answer
