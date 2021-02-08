@@ -5,6 +5,7 @@ aArray =[]
 ansArray = []
 array =[]
 score = 0
+temparray = []
 numofQs = int(input("How many questions do you want?:\n"))
 
 
@@ -20,7 +21,7 @@ with open("answers.txt", "r") as file:
 for i in range(numofQs):
     qNum = random.randint(0,len(qArray)-1)
     print(qArray[qNum])
-
+    temparray = ansArray[:]
     temp=ansArray.pop(qNum)
     array = random.sample(ansArray,3)
     if aArray[qNum] == 'A':
@@ -34,7 +35,11 @@ for i in range(numofQs):
     print(*array, sep=', ')
     answer = input("Input a,b,c, or d:\n")
     if answer == aArray[qNum]:
+        print("Good job!\n+100!")
         score+=100
+    else:
+        print("Nice try, the correct answer was:\n",ansArray[qNum])
+    ansArray = temparray[:]
 with open("scores.txt","w") as file:
     file.write(str(score))
 
