@@ -1,12 +1,18 @@
-from matplotlib.pyplot import ylabel, plot, show, xlabel, title
+import matplotlib.pyplot as plt
 import math
-x = [1,2,3,4,5,6,7,8,9,10,11,12]
+x = [x for x in range(1,31)]
+print(x)
 y = [math.log(b) for b in x]
 z = [b**2 for b in x]
 a = [2**b for b in x]
 c = [math.factorial(b) for b in x]
-plot(x, c, 'b')
-xlabel('Inputs')
-ylabel('Steps')
-title('Constant Complexity')
-show()
+figure, axis = plt.subplots(2, 2)
+axis[0, 0].plot(x, y)
+axis[0, 0].set_title("Logarithmic Growth")
+axis[0, 1].plot(x, z)
+axis[0, 1].set_title("Quadratic Growth")
+axis[1, 0].plot(x, a)
+axis[1, 0].set_title("Exponential Growth")
+axis[1, 1].plot(x, c)
+axis[1, 1].set_title("Factorial Growth")
+plt.show()
