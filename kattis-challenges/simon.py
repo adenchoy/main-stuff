@@ -18,3 +18,10 @@ for line in f:
         line_count += 1
 print(f.readline())
 print(line_count)
+list = []
+for i in range(int(5)):
+      temp = []
+      for y in range(3):
+            temp.append(f.readline().strip())
+      list.append(temp)
+print(list)
