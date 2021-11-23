@@ -1,6 +1,0 @@
-with open("practical.txt","r") as file:
-    with open("changedpractical.txt","w") as newfile:
-        for line in file:
-            if str(line[::2]) == "19.1":
-                while line != "19.2":
-                    newfile.append(line)
