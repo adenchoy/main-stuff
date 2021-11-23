@@ -5,7 +5,7 @@ class Node:
         self.rightPoint = rightpointer
     def __repr__(self):
         return self.Data
-
+    
 tree = [0,0,0,0,0,0,0,0,0,0,0,0]
 NextNode = 0
 def CreateTree(NodeData):
