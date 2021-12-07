@@ -32,3 +32,13 @@ with open("191.pickle","rb") as z:
         test = pickle.load(z)
         test.Finished = True
         print(test.Finished)
+def updateTracker19():
+    with open("191.pickle","rb") as z:
+        for i in range(19):
+          m= pickle.load(z)
+          x = input("Have you finished",m,"?")
+          if m == "yes":
+              m.Finished = True
+          pickle.dump(m,z)
+
+updateTracker19()
