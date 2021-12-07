@@ -6,16 +6,28 @@ class Model:
         self.__gender = Gender
         self.__PhoneNo = Mobile
         self.__email = Email
-        self.__age = Age
-        self.country = Country
-        self.dress = DressSize
-        self.Other = OtherAgencies
-
+        self.__age = int(Age)
+        self.__country = Country
+        self.__dress = int(DressSize)
+        self.__Other = OtherAgencies
+    def __repr__(self):
+        return self.__fName
+    def getter(self,sizelower, sizeupper, agelower, ageupper):
+        if self.__age >= agelower and self.__age <= ageupper and self.__dress >= sizelower and self.__dress <= sizeupper:
+            return self
+        else:
+            pass
 
 list = []
 try:
-    with open("/Users/adenchoy/Desktop/main-stuff/main-stuff/modeltest.txt","r") as f:
-      print("test")
-except IOError:
+    with open("main-stuff/modeltest.txt","r") as f:
+      f.readline()
+      for i in f:
+          
+          parts = i.split(',')
+          list.append(Model(*parts))
+except OSError:
     print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
-print(list)
+
+for j in list:
+    print(j.getter(0,50,0,60))
