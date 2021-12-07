@@ -14,9 +14,8 @@ class Model:
 
 list = []
 try:
-    with open("modeldata.txt","r") as f:
-      for i in f:
-           list.append(Model(i))
+    with open("modeltest.txt","r") as f:
+      print("test")
 except IOError:
     print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
 print(list)
