@@ -14,7 +14,7 @@ class Model:
 
 list = []
 try:
-    with open("modeltest.txt","r") as f:
+    with open("/Users/adenchoy/Desktop/main-stuff/main-stuff/modeltest.txt","r") as f:
       print("test")
 except IOError:
     print("Sorry, could not find the file. Make sure it is in the correct directory. The current directory is",os.getcwd())
