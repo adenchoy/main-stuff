@@ -1,0 +1,46 @@
+class Picture():
+    def __init__(self, Desc, Wid, Hei, Fra) -> None:
+        self.__Description = Desc
+        self.__Width = Wid
+        self.__Height = Hei
+        self.__FrameColour = Fra
+    def GetDescription(self):
+        return self.__Description
+    def GetWidth(self):
+        return self.__Width
+    def GetHeight(self):
+        return self.__Height
+    def GetFrameColour(self):
+        return self.__FrameColour
+    def SetDescription(self,entry):
+        self.__Description = entry
+    def __repr__(self) -> str:
+        return self.__Description
+description = []
+width = []
+height = []
+framecolour = []
+ArrayPic = [Picture('','','','') for x in range(100)]
+def ReadData():
+    with open('/Users/adenchoy/Desktop/main-stuff/main-stuff/Pictures.txt') as f:
+            num_lines = len(f.readlines())
+            f.seek(0)
+            for i in range((num_lines//4)):
+                    description.append(f.readline().strip())
+                    width.append(f.readline().strip())
+                    height.append(f.readline().strip())
+                    framecolour.append(f.readline().strip())
+
+    for i in range(len(description)):
+        ArrayPic[i] = Picture(description[i],width[i],height[i],framecolour[i])
+
+def Main():
+    ReadData()
+    arraysearch = []
+    searchframe,searchwidth,searchheight = input("Please input your search data in this format (BLACK, 100, 100):\n").split(', ')
+    for i in ArrayPic:
+        if i.GetFrameColour() == searchframe.lower() and int(i.GetWidth()) <= int(searchwidth) and int(i.GetHeight()) <= int(searchheight):
+            arraysearch.append(i)
+    for x in arraysearch:
+        print(x.GetDescription(),x.GetWidth(),x.GetHeight())
+Main()
